@@ -1,0 +1,31 @@
+= Demo for running Java SOAP Web Service
+:toc:
+
+== Overview
+
+Runs a Java process serving SOAP Web Services.
+
+It uses _Jakarta XML Web Services 4.0_ (Jakarta EE 10), previously known as JAX-WS.
+
+== Requirements
+
+* Java 17
+
+== Docker image
+
+[source,bash]
+----
+docker pull ghcr.io/ghusta/java-soap-webservice:latest
+----
+
+Run a container with :
+
+[source,bash]
+----
+docker run -d -p 8080:8080 ghcr.io/ghusta/java-soap-webservice:latest
+----
+
+== References
+
+* https://jakarta.ee/specifications/xml-web-services/4.0/[Jakarta XML Web Services 4.0]
+* https://www.baeldung.com/jax-ws[Introduction to JAX-WS]

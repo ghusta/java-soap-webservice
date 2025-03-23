@@ -6,6 +6,8 @@
     <artifactId>soap-webservice-server</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Demo for running Java SOAP Web Service</name>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
