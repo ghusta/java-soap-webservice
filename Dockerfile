@@ -8,4 +8,4 @@ COPY target/soap-webservice-server-*.jar app.jar
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -cp 'app.jar:lib/*' -Dserver.port=8080 com.example.ws.ServerPublisher"]
+CMD ["java", "-cp", "app.jar:lib/*", "-Dserver.port=8080", "com.example.ws.ServerPublisher"]
