@@ -1,0 +1,30 @@
+name: Build & Publish Docker Image to GHCR
+
+on:
+  push:
+    branches:
+      - main  # Change if needed
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: read
+  packages: write  # Allows pushing to GHCR
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+
+      - name: Build Docker Image
+        run: |
+          docker build -t ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest .
+
+      - name: Push Docker Image to GHCR
+        run: |
+          docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
