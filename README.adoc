@@ -9,7 +9,7 @@ It uses _Jakarta XML Web Services 4.0_ (Jakarta EE 10), previously known as JAX-
 
 == Requirements
 
-* Java 17
+* Java 11
 
 == Docker image
 
