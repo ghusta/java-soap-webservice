@@ -27,7 +27,7 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven
-        run: mvn clean package -DskipTests
+        run: mvn clean package -DskipTests -ntp
 
       - name: Upload JAR as Artifact
         uses: actions/upload-artifact@v4
@@ -36,6 +36,9 @@ jobs:
           path: |
             target/*.jar
             target/lib/*.jar
+
+      - name: Display structure of downloaded files
+        run: ls -R target/
 
   build-and-push:
     name: Build & Push Docker Image
