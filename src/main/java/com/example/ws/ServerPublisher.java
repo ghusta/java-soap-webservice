@@ -33,8 +33,12 @@ public class ServerPublisher {
         }
 
         String url = "http://localhost:%d/ws/hello".formatted(port);
-        Endpoint.publish(url, new HelloServiceImpl());
-        log.info("Service SOAP publié à : {}?wsdl ", url);
+        Endpoint endpoint = Endpoint.publish(url, new HelloServiceImpl());
+        log.info("SOAP endpoint for service '{}' published at : {}?wsdl ",
+                HelloServiceImpl.class.getName(), url);
+        if (endpoint.getExecutor() != null) {
+            log.info("Endpoint using executor {}", endpoint.getExecutor().getClass().getName());
+        }
     }
 
 }
