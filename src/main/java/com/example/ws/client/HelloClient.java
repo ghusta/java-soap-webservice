@@ -22,7 +22,7 @@ public class HelloClient {
         HelloService helloService = service.getPort(HelloService.class);
 
         try {
-            Faker faker = new Faker(Locale.FRANCE);
+            Faker faker = new Faker(Locale.FRENCH);
 
             // Générer un prénom aléatoire
             String prenom = faker.name().firstName();
