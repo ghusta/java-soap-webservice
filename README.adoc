@@ -29,3 +29,4 @@ docker run -d -p 8080:8080 ghcr.io/ghusta/java-soap-webservice:latest
 
 * https://jakarta.ee/specifications/xml-web-services/4.0/[Jakarta XML Web Services 4.0]
 * https://www.baeldung.com/jax-ws[Introduction to JAX-WS]
+** https://www.baeldung.com/jax-ws#publishing-the-web-service-endpoints[Publishing the Web Service Endpoints]
